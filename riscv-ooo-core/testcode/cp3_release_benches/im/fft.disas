@@ -1,0 +1,1493 @@
+
+fft.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .init:
+
+aaaaa000 <_start>:
+aaaaa000:	00000013          	nop
+aaaaa004:	00000093          	li	ra,0
+aaaaa008:	00000113          	li	sp,0
+aaaaa00c:	00000193          	li	gp,0
+aaaaa010:	00000213          	li	tp,0
+aaaaa014:	00000293          	li	t0,0
+aaaaa018:	00000313          	li	t1,0
+aaaaa01c:	00000393          	li	t2,0
+aaaaa020:	00000413          	li	s0,0
+aaaaa024:	00000493          	li	s1,0
+aaaaa028:	00000513          	li	a0,0
+aaaaa02c:	00000593          	li	a1,0
+aaaaa030:	00000613          	li	a2,0
+aaaaa034:	00000693          	li	a3,0
+aaaaa038:	00000713          	li	a4,0
+aaaaa03c:	00000793          	li	a5,0
+aaaaa040:	00000813          	li	a6,0
+aaaaa044:	00000893          	li	a7,0
+aaaaa048:	00000913          	li	s2,0
+aaaaa04c:	00000993          	li	s3,0
+aaaaa050:	00000a13          	li	s4,0
+aaaaa054:	00000a93          	li	s5,0
+aaaaa058:	00000b13          	li	s6,0
+aaaaa05c:	00000b93          	li	s7,0
+aaaaa060:	00000c13          	li	s8,0
+aaaaa064:	00000c93          	li	s9,0
+aaaaa068:	00000d13          	li	s10,0
+aaaaa06c:	00000d93          	li	s11,0
+aaaaa070:	00000e13          	li	t3,0
+aaaaa074:	00000e93          	li	t4,0
+aaaaa078:	00000f13          	li	t5,0
+aaaaa07c:	00000f93          	li	t6,0
+
+aaaaa080 <_initbss>:
+aaaaa080:	00006317          	auipc	t1,0x6
+aaaaa084:	f8030313          	addi	t1,t1,-128 # aaab0000 <__global_pointer$>
+aaaaa088:	00006397          	auipc	t2,0x6
+aaaaa08c:	f7838393          	addi	t2,t2,-136 # aaab0000 <__global_pointer$>
+aaaaa090:	00730863          	beq	t1,t2,aaaaa0a0 <_setup>
+
+aaaaa094 <_initbss_loop>:
+aaaaa094:	00032023          	sw	zero,0(t1)
+aaaaa098:	00430313          	addi	t1,t1,4
+aaaaa09c:	fe736ce3          	bltu	t1,t2,aaaaa094 <_initbss_loop>
+
+aaaaa0a0 <_setup>:
+aaaaa0a0:	45556117          	auipc	sp,0x45556
+aaaaa0a4:	f6010113          	addi	sp,sp,-160 # f0000000 <_stack_top>
+aaaaa0a8:	00010433          	add	s0,sp,zero
+aaaaa0ac:	00002097          	auipc	ra,0x2
+aaaaa0b0:	1ec080e7          	jalr	492(ra) # aaaac298 <main>
+aaaaa0b4:	f0002013          	slti	zero,zero,-256
+
+aaaaa0b8 <_fini>:
+aaaaa0b8:	00000063          	beqz	zero,aaaaa0b8 <_fini>
+aaaaa0bc:	00000013          	nop
+aaaaa0c0:	00000013          	nop
+aaaaa0c4:	00000013          	nop
+aaaaa0c8:	00000013          	nop
+aaaaa0cc:	00000013          	nop
+aaaaa0d0:	00000013          	nop
+aaaaa0d4:	00000013          	nop
+aaaaa0d8:	00000013          	nop
+aaaaa0dc:	00000013          	nop
+aaaaa0e0:	00000013          	nop
+aaaaa0e4:	00000013          	nop
+aaaaa0e8:	00000013          	nop
+aaaaa0ec:	00000013          	nop
+aaaaa0f0:	00000013          	nop
+aaaaa0f4:	00000013          	nop
+aaaaa0f8:	00000013          	nop
+aaaaa0fc:	00000013          	nop
+aaaaa100:	00000013          	nop
+aaaaa104:	00000013          	nop
+aaaaa108:	00000013          	nop
+aaaaa10c:	00000013          	nop
+aaaaa110:	00000013          	nop
+aaaaa114:	00000013          	nop
+aaaaa118:	00000013          	nop
+aaaaa11c:	00000013          	nop
+aaaaa120:	00000013          	nop
+aaaaa124:	00000013          	nop
+aaaaa128:	00000013          	nop
+aaaaa12c:	00000013          	nop
+aaaaa130:	00000013          	nop
+aaaaa134:	00000013          	nop
+aaaaa138:	00000013          	nop
+aaaaa13c:	00000013          	nop
+aaaaa140:	00000013          	nop
+aaaaa144:	00000013          	nop
+aaaaa148:	00000013          	nop
+aaaaa14c:	00000013          	nop
+aaaaa150:	00000013          	nop
+aaaaa154:	00000013          	nop
+aaaaa158:	00000013          	nop
+aaaaa15c:	00000013          	nop
+aaaaa160:	00000013          	nop
+aaaaa164:	00000013          	nop
+aaaaa168:	00000013          	nop
+aaaaa16c:	00000013          	nop
+aaaaa170:	00000013          	nop
+aaaaa174:	00000013          	nop
+aaaaa178:	00000013          	nop
+aaaaa17c:	00000013          	nop
+aaaaa180:	00000013          	nop
+aaaaa184:	00000013          	nop
+aaaaa188:	00000013          	nop
+aaaaa18c:	00000013          	nop
+aaaaa190:	00000013          	nop
+aaaaa194:	00000013          	nop
+aaaaa198:	00000013          	nop
+aaaaa19c:	00000013          	nop
+aaaaa1a0:	00000013          	nop
+aaaaa1a4:	00000013          	nop
+aaaaa1a8:	00000013          	nop
+aaaaa1ac:	00000013          	nop
+aaaaa1b0:	00000013          	nop
+aaaaa1b4:	00000013          	nop
+aaaaa1b8:	00000013          	nop
+aaaaa1bc:	00000013          	nop
+aaaaa1c0:	00000013          	nop
+aaaaa1c4:	00000013          	nop
+aaaaa1c8:	00000013          	nop
+aaaaa1cc:	00000013          	nop
+aaaaa1d0:	00000013          	nop
+aaaaa1d4:	00000013          	nop
+aaaaa1d8:	00000013          	nop
+aaaaa1dc:	00000013          	nop
+aaaaa1e0:	00000013          	nop
+aaaaa1e4:	00000013          	nop
+aaaaa1e8:	00000013          	nop
+aaaaa1ec:	00000013          	nop
+aaaaa1f0:	00000013          	nop
+aaaaa1f4:	00000013          	nop
+aaaaa1f8:	00000013          	nop
+aaaaa1fc:	00000013          	nop
+aaaaa200:	00000013          	nop
+aaaaa204:	00000013          	nop
+aaaaa208:	00000013          	nop
+aaaaa20c:	00000013          	nop
+aaaaa210:	00000013          	nop
+aaaaa214:	00000013          	nop
+aaaaa218:	00000013          	nop
+aaaaa21c:	00000013          	nop
+aaaaa220:	00000013          	nop
+aaaaa224:	00000013          	nop
+aaaaa228:	00000013          	nop
+aaaaa22c:	00000013          	nop
+aaaaa230:	00000013          	nop
+aaaaa234:	00000013          	nop
+aaaaa238:	00000013          	nop
+aaaaa23c:	00000013          	nop
+aaaaa240:	00000013          	nop
+aaaaa244:	00000013          	nop
+aaaaa248:	00000013          	nop
+aaaaa24c:	00000013          	nop
+aaaaa250:	00000013          	nop
+aaaaa254:	00000013          	nop
+aaaaa258:	00000013          	nop
+aaaaa25c:	00000013          	nop
+aaaaa260:	00000013          	nop
+aaaaa264:	00000013          	nop
+aaaaa268:	00000013          	nop
+aaaaa26c:	00000013          	nop
+aaaaa270:	00000013          	nop
+aaaaa274:	00000013          	nop
+aaaaa278:	00000013          	nop
+aaaaa27c:	00000013          	nop
+aaaaa280:	00000013          	nop
+aaaaa284:	00000013          	nop
+aaaaa288:	00000013          	nop
+aaaaa28c:	00000013          	nop
+aaaaa290:	00000013          	nop
+aaaaa294:	00000013          	nop
+aaaaa298:	00000013          	nop
+aaaaa29c:	00000013          	nop
+aaaaa2a0:	00000013          	nop
+aaaaa2a4:	00000013          	nop
+aaaaa2a8:	00000013          	nop
+aaaaa2ac:	00000013          	nop
+aaaaa2b0:	00000013          	nop
+aaaaa2b4:	00000013          	nop
+aaaaa2b8:	00000013          	nop
+aaaaa2bc:	00000013          	nop
+aaaaa2c0:	00000013          	nop
+aaaaa2c4:	00000013          	nop
+aaaaa2c8:	00000013          	nop
+aaaaa2cc:	00000013          	nop
+aaaaa2d0:	00000013          	nop
+aaaaa2d4:	00000013          	nop
+aaaaa2d8:	00000013          	nop
+aaaaa2dc:	00000013          	nop
+aaaaa2e0:	00000013          	nop
+aaaaa2e4:	00000013          	nop
+aaaaa2e8:	00000013          	nop
+aaaaa2ec:	00000013          	nop
+aaaaa2f0:	00000013          	nop
+aaaaa2f4:	00000013          	nop
+aaaaa2f8:	00000013          	nop
+aaaaa2fc:	00000013          	nop
+aaaaa300:	00000013          	nop
+aaaaa304:	00000013          	nop
+aaaaa308:	00000013          	nop
+aaaaa30c:	00000013          	nop
+aaaaa310:	00000013          	nop
+aaaaa314:	00000013          	nop
+aaaaa318:	00000013          	nop
+aaaaa31c:	00000013          	nop
+aaaaa320:	00000013          	nop
+aaaaa324:	00000013          	nop
+aaaaa328:	00000013          	nop
+aaaaa32c:	00000013          	nop
+aaaaa330:	00000013          	nop
+aaaaa334:	00000013          	nop
+aaaaa338:	00000013          	nop
+aaaaa33c:	00000013          	nop
+aaaaa340:	00000013          	nop
+aaaaa344:	00000013          	nop
+aaaaa348:	00000013          	nop
+aaaaa34c:	00000013          	nop
+aaaaa350:	00000013          	nop
+aaaaa354:	00000013          	nop
+aaaaa358:	00000013          	nop
+aaaaa35c:	00000013          	nop
+aaaaa360:	00000013          	nop
+aaaaa364:	00000013          	nop
+aaaaa368:	00000013          	nop
+aaaaa36c:	00000013          	nop
+aaaaa370:	00000013          	nop
+aaaaa374:	00000013          	nop
+aaaaa378:	00000013          	nop
+aaaaa37c:	00000013          	nop
+aaaaa380:	00000013          	nop
+aaaaa384:	00000013          	nop
+aaaaa388:	00000013          	nop
+aaaaa38c:	00000013          	nop
+aaaaa390:	00000013          	nop
+aaaaa394:	00000013          	nop
+aaaaa398:	00000013          	nop
+aaaaa39c:	00000013          	nop
+aaaaa3a0:	00000013          	nop
+aaaaa3a4:	00000013          	nop
+aaaaa3a8:	00000013          	nop
+aaaaa3ac:	00000013          	nop
+aaaaa3b0:	00000013          	nop
+aaaaa3b4:	00000013          	nop
+aaaaa3b8:	00000013          	nop
+aaaaa3bc:	00000013          	nop
+aaaaa3c0:	00000013          	nop
+aaaaa3c4:	00000013          	nop
+aaaaa3c8:	00000013          	nop
+aaaaa3cc:	00000013          	nop
+aaaaa3d0:	00000013          	nop
+aaaaa3d4:	00000013          	nop
+aaaaa3d8:	00000013          	nop
+aaaaa3dc:	00000013          	nop
+aaaaa3e0:	00000013          	nop
+aaaaa3e4:	00000013          	nop
+aaaaa3e8:	00000013          	nop
+aaaaa3ec:	00000013          	nop
+aaaaa3f0:	00000013          	nop
+aaaaa3f4:	00000013          	nop
+aaaaa3f8:	00000013          	nop
+aaaaa3fc:	00000013          	nop
+aaaaa400:	00000013          	nop
+aaaaa404:	00000013          	nop
+aaaaa408:	00000013          	nop
+aaaaa40c:	00000013          	nop
+aaaaa410:	00000013          	nop
+aaaaa414:	00000013          	nop
+aaaaa418:	00000013          	nop
+aaaaa41c:	00000013          	nop
+aaaaa420:	00000013          	nop
+aaaaa424:	00000013          	nop
+aaaaa428:	00000013          	nop
+aaaaa42c:	00000013          	nop
+aaaaa430:	00000013          	nop
+aaaaa434:	00000013          	nop
+aaaaa438:	00000013          	nop
+aaaaa43c:	00000013          	nop
+aaaaa440:	00000013          	nop
+aaaaa444:	00000013          	nop
+aaaaa448:	00000013          	nop
+aaaaa44c:	00000013          	nop
+aaaaa450:	00000013          	nop
+aaaaa454:	00000013          	nop
+aaaaa458:	00000013          	nop
+aaaaa45c:	00000013          	nop
+aaaaa460:	00000013          	nop
+aaaaa464:	00000013          	nop
+aaaaa468:	00000013          	nop
+aaaaa46c:	00000013          	nop
+aaaaa470:	00000013          	nop
+aaaaa474:	00000013          	nop
+aaaaa478:	00000013          	nop
+aaaaa47c:	00000013          	nop
+aaaaa480:	00000013          	nop
+aaaaa484:	00000013          	nop
+aaaaa488:	00000013          	nop
+aaaaa48c:	00000013          	nop
+aaaaa490:	00000013          	nop
+aaaaa494:	00000013          	nop
+aaaaa498:	00000013          	nop
+aaaaa49c:	00000013          	nop
+aaaaa4a0:	00000013          	nop
+aaaaa4a4:	00000013          	nop
+aaaaa4a8:	00000013          	nop
+aaaaa4ac:	00000013          	nop
+aaaaa4b0:	00000013          	nop
+aaaaa4b4:	00000013          	nop
+aaaaa4b8:	00000013          	nop
+aaaaa4bc:	00000013          	nop
+aaaaa4c0:	00000013          	nop
+aaaaa4c4:	00000013          	nop
+aaaaa4c8:	00000013          	nop
+aaaaa4cc:	00000013          	nop
+aaaaa4d0:	00000013          	nop
+aaaaa4d4:	00000013          	nop
+aaaaa4d8:	00000013          	nop
+aaaaa4dc:	00000013          	nop
+aaaaa4e0:	00000013          	nop
+aaaaa4e4:	00000013          	nop
+aaaaa4e8:	00000013          	nop
+aaaaa4ec:	00000013          	nop
+aaaaa4f0:	00000013          	nop
+aaaaa4f4:	00000013          	nop
+aaaaa4f8:	00000013          	nop
+aaaaa4fc:	00000013          	nop
+aaaaa500:	00000013          	nop
+aaaaa504:	00000013          	nop
+aaaaa508:	00000013          	nop
+aaaaa50c:	00000013          	nop
+aaaaa510:	00000013          	nop
+aaaaa514:	00000013          	nop
+aaaaa518:	00000013          	nop
+aaaaa51c:	00000013          	nop
+aaaaa520:	00000013          	nop
+aaaaa524:	00000013          	nop
+aaaaa528:	00000013          	nop
+aaaaa52c:	00000013          	nop
+aaaaa530:	00000013          	nop
+aaaaa534:	00000013          	nop
+aaaaa538:	00000013          	nop
+aaaaa53c:	00000013          	nop
+aaaaa540:	00000013          	nop
+aaaaa544:	00000013          	nop
+aaaaa548:	00000013          	nop
+aaaaa54c:	00000013          	nop
+aaaaa550:	00000013          	nop
+aaaaa554:	00000013          	nop
+aaaaa558:	00000013          	nop
+aaaaa55c:	00000013          	nop
+aaaaa560:	00000013          	nop
+aaaaa564:	00000013          	nop
+aaaaa568:	00000013          	nop
+aaaaa56c:	00000013          	nop
+aaaaa570:	00000013          	nop
+aaaaa574:	00000013          	nop
+aaaaa578:	00000013          	nop
+aaaaa57c:	00000013          	nop
+aaaaa580:	00000013          	nop
+aaaaa584:	00000013          	nop
+aaaaa588:	00000013          	nop
+aaaaa58c:	00000013          	nop
+aaaaa590:	00000013          	nop
+aaaaa594:	00000013          	nop
+aaaaa598:	00000013          	nop
+aaaaa59c:	00000013          	nop
+aaaaa5a0:	00000013          	nop
+aaaaa5a4:	00000013          	nop
+aaaaa5a8:	00000013          	nop
+aaaaa5ac:	00000013          	nop
+aaaaa5b0:	00000013          	nop
+aaaaa5b4:	00000013          	nop
+aaaaa5b8:	00000013          	nop
+aaaaa5bc:	00000013          	nop
+aaaaa5c0:	00000013          	nop
+aaaaa5c4:	00000013          	nop
+aaaaa5c8:	00000013          	nop
+aaaaa5cc:	00000013          	nop
+aaaaa5d0:	00000013          	nop
+aaaaa5d4:	00000013          	nop
+aaaaa5d8:	00000013          	nop
+aaaaa5dc:	00000013          	nop
+aaaaa5e0:	00000013          	nop
+aaaaa5e4:	00000013          	nop
+aaaaa5e8:	00000013          	nop
+aaaaa5ec:	00000013          	nop
+aaaaa5f0:	00000013          	nop
+aaaaa5f4:	00000013          	nop
+aaaaa5f8:	00000013          	nop
+aaaaa5fc:	00000013          	nop
+aaaaa600:	00000013          	nop
+aaaaa604:	00000013          	nop
+aaaaa608:	00000013          	nop
+aaaaa60c:	00000013          	nop
+aaaaa610:	00000013          	nop
+aaaaa614:	00000013          	nop
+aaaaa618:	00000013          	nop
+aaaaa61c:	00000013          	nop
+aaaaa620:	00000013          	nop
+aaaaa624:	00000013          	nop
+aaaaa628:	00000013          	nop
+aaaaa62c:	00000013          	nop
+aaaaa630:	00000013          	nop
+aaaaa634:	00000013          	nop
+aaaaa638:	00000013          	nop
+aaaaa63c:	00000013          	nop
+aaaaa640:	00000013          	nop
+aaaaa644:	00000013          	nop
+aaaaa648:	00000013          	nop
+aaaaa64c:	00000013          	nop
+aaaaa650:	00000013          	nop
+aaaaa654:	00000013          	nop
+aaaaa658:	00000013          	nop
+aaaaa65c:	00000013          	nop
+aaaaa660:	00000013          	nop
+aaaaa664:	00000013          	nop
+aaaaa668:	00000013          	nop
+aaaaa66c:	00000013          	nop
+aaaaa670:	00000013          	nop
+aaaaa674:	00000013          	nop
+aaaaa678:	00000013          	nop
+aaaaa67c:	00000013          	nop
+aaaaa680:	00000013          	nop
+aaaaa684:	00000013          	nop
+aaaaa688:	00000013          	nop
+aaaaa68c:	00000013          	nop
+aaaaa690:	00000013          	nop
+aaaaa694:	00000013          	nop
+aaaaa698:	00000013          	nop
+aaaaa69c:	00000013          	nop
+aaaaa6a0:	00000013          	nop
+aaaaa6a4:	00000013          	nop
+aaaaa6a8:	00000013          	nop
+aaaaa6ac:	00000013          	nop
+aaaaa6b0:	00000013          	nop
+aaaaa6b4:	00000013          	nop
+aaaaa6b8:	00000013          	nop
+aaaaa6bc:	00000013          	nop
+aaaaa6c0:	00000013          	nop
+aaaaa6c4:	00000013          	nop
+aaaaa6c8:	00000013          	nop
+aaaaa6cc:	00000013          	nop
+aaaaa6d0:	00000013          	nop
+aaaaa6d4:	00000013          	nop
+aaaaa6d8:	00000013          	nop
+aaaaa6dc:	00000013          	nop
+aaaaa6e0:	00000013          	nop
+aaaaa6e4:	00000013          	nop
+aaaaa6e8:	00000013          	nop
+aaaaa6ec:	00000013          	nop
+aaaaa6f0:	00000013          	nop
+aaaaa6f4:	00000013          	nop
+aaaaa6f8:	00000013          	nop
+aaaaa6fc:	00000013          	nop
+aaaaa700:	00000013          	nop
+aaaaa704:	00000013          	nop
+aaaaa708:	00000013          	nop
+aaaaa70c:	00000013          	nop
+aaaaa710:	00000013          	nop
+aaaaa714:	00000013          	nop
+aaaaa718:	00000013          	nop
+aaaaa71c:	00000013          	nop
+aaaaa720:	00000013          	nop
+aaaaa724:	00000013          	nop
+aaaaa728:	00000013          	nop
+aaaaa72c:	00000013          	nop
+aaaaa730:	00000013          	nop
+aaaaa734:	00000013          	nop
+aaaaa738:	00000013          	nop
+aaaaa73c:	00000013          	nop
+aaaaa740:	00000013          	nop
+aaaaa744:	00000013          	nop
+aaaaa748:	00000013          	nop
+aaaaa74c:	00000013          	nop
+aaaaa750:	00000013          	nop
+aaaaa754:	00000013          	nop
+aaaaa758:	00000013          	nop
+aaaaa75c:	00000013          	nop
+aaaaa760:	00000013          	nop
+aaaaa764:	00000013          	nop
+aaaaa768:	00000013          	nop
+aaaaa76c:	00000013          	nop
+aaaaa770:	00000013          	nop
+aaaaa774:	00000013          	nop
+aaaaa778:	00000013          	nop
+aaaaa77c:	00000013          	nop
+aaaaa780:	00000013          	nop
+aaaaa784:	00000013          	nop
+aaaaa788:	00000013          	nop
+aaaaa78c:	00000013          	nop
+aaaaa790:	00000013          	nop
+aaaaa794:	00000013          	nop
+aaaaa798:	00000013          	nop
+aaaaa79c:	00000013          	nop
+aaaaa7a0:	00000013          	nop
+aaaaa7a4:	00000013          	nop
+aaaaa7a8:	00000013          	nop
+aaaaa7ac:	00000013          	nop
+aaaaa7b0:	00000013          	nop
+aaaaa7b4:	00000013          	nop
+aaaaa7b8:	00000013          	nop
+aaaaa7bc:	00000013          	nop
+aaaaa7c0:	00000013          	nop
+aaaaa7c4:	00000013          	nop
+aaaaa7c8:	00000013          	nop
+aaaaa7cc:	00000013          	nop
+aaaaa7d0:	00000013          	nop
+aaaaa7d4:	00000013          	nop
+aaaaa7d8:	00000013          	nop
+aaaaa7dc:	00000013          	nop
+aaaaa7e0:	00000013          	nop
+aaaaa7e4:	00000013          	nop
+aaaaa7e8:	00000013          	nop
+aaaaa7ec:	00000013          	nop
+aaaaa7f0:	00000013          	nop
+aaaaa7f4:	00000013          	nop
+aaaaa7f8:	00000013          	nop
+aaaaa7fc:	00000013          	nop
+aaaaa800:	00000013          	nop
+aaaaa804:	00000013          	nop
+aaaaa808:	00000013          	nop
+aaaaa80c:	00000013          	nop
+aaaaa810:	00000013          	nop
+aaaaa814:	00000013          	nop
+aaaaa818:	00000013          	nop
+aaaaa81c:	00000013          	nop
+aaaaa820:	00000013          	nop
+aaaaa824:	00000013          	nop
+aaaaa828:	00000013          	nop
+aaaaa82c:	00000013          	nop
+aaaaa830:	00000013          	nop
+aaaaa834:	00000013          	nop
+aaaaa838:	00000013          	nop
+aaaaa83c:	00000013          	nop
+aaaaa840:	00000013          	nop
+aaaaa844:	00000013          	nop
+aaaaa848:	00000013          	nop
+aaaaa84c:	00000013          	nop
+aaaaa850:	00000013          	nop
+aaaaa854:	00000013          	nop
+aaaaa858:	00000013          	nop
+aaaaa85c:	00000013          	nop
+aaaaa860:	00000013          	nop
+aaaaa864:	00000013          	nop
+aaaaa868:	00000013          	nop
+aaaaa86c:	00000013          	nop
+aaaaa870:	00000013          	nop
+aaaaa874:	00000013          	nop
+aaaaa878:	00000013          	nop
+aaaaa87c:	00000013          	nop
+aaaaa880:	00000013          	nop
+aaaaa884:	00000013          	nop
+aaaaa888:	00000013          	nop
+aaaaa88c:	00000013          	nop
+aaaaa890:	00000013          	nop
+aaaaa894:	00000013          	nop
+aaaaa898:	00000013          	nop
+aaaaa89c:	00000013          	nop
+aaaaa8a0:	00000013          	nop
+aaaaa8a4:	00000013          	nop
+aaaaa8a8:	00000013          	nop
+aaaaa8ac:	00000013          	nop
+aaaaa8b0:	00000013          	nop
+aaaaa8b4:	00000013          	nop
+aaaaa8b8:	00000013          	nop
+aaaaa8bc:	00000013          	nop
+aaaaa8c0:	00000013          	nop
+aaaaa8c4:	00000013          	nop
+aaaaa8c8:	00000013          	nop
+aaaaa8cc:	00000013          	nop
+aaaaa8d0:	00000013          	nop
+aaaaa8d4:	00000013          	nop
+aaaaa8d8:	00000013          	nop
+aaaaa8dc:	00000013          	nop
+aaaaa8e0:	00000013          	nop
+aaaaa8e4:	00000013          	nop
+aaaaa8e8:	00000013          	nop
+aaaaa8ec:	00000013          	nop
+aaaaa8f0:	00000013          	nop
+aaaaa8f4:	00000013          	nop
+aaaaa8f8:	00000013          	nop
+aaaaa8fc:	00000013          	nop
+aaaaa900:	00000013          	nop
+aaaaa904:	00000013          	nop
+aaaaa908:	00000013          	nop
+aaaaa90c:	00000013          	nop
+aaaaa910:	00000013          	nop
+aaaaa914:	00000013          	nop
+aaaaa918:	00000013          	nop
+aaaaa91c:	00000013          	nop
+aaaaa920:	00000013          	nop
+aaaaa924:	00000013          	nop
+aaaaa928:	00000013          	nop
+aaaaa92c:	00000013          	nop
+aaaaa930:	00000013          	nop
+aaaaa934:	00000013          	nop
+aaaaa938:	00000013          	nop
+aaaaa93c:	00000013          	nop
+aaaaa940:	00000013          	nop
+aaaaa944:	00000013          	nop
+aaaaa948:	00000013          	nop
+aaaaa94c:	00000013          	nop
+aaaaa950:	00000013          	nop
+aaaaa954:	00000013          	nop
+aaaaa958:	00000013          	nop
+aaaaa95c:	00000013          	nop
+aaaaa960:	00000013          	nop
+aaaaa964:	00000013          	nop
+aaaaa968:	00000013          	nop
+aaaaa96c:	00000013          	nop
+aaaaa970:	00000013          	nop
+aaaaa974:	00000013          	nop
+aaaaa978:	00000013          	nop
+aaaaa97c:	00000013          	nop
+aaaaa980:	00000013          	nop
+aaaaa984:	00000013          	nop
+aaaaa988:	00000013          	nop
+aaaaa98c:	00000013          	nop
+aaaaa990:	00000013          	nop
+aaaaa994:	00000013          	nop
+aaaaa998:	00000013          	nop
+aaaaa99c:	00000013          	nop
+aaaaa9a0:	00000013          	nop
+aaaaa9a4:	00000013          	nop
+aaaaa9a8:	00000013          	nop
+aaaaa9ac:	00000013          	nop
+aaaaa9b0:	00000013          	nop
+aaaaa9b4:	00000013          	nop
+aaaaa9b8:	00000013          	nop
+aaaaa9bc:	00000013          	nop
+aaaaa9c0:	00000013          	nop
+aaaaa9c4:	00000013          	nop
+aaaaa9c8:	00000013          	nop
+aaaaa9cc:	00000013          	nop
+aaaaa9d0:	00000013          	nop
+aaaaa9d4:	00000013          	nop
+aaaaa9d8:	00000013          	nop
+aaaaa9dc:	00000013          	nop
+aaaaa9e0:	00000013          	nop
+aaaaa9e4:	00000013          	nop
+aaaaa9e8:	00000013          	nop
+aaaaa9ec:	00000013          	nop
+aaaaa9f0:	00000013          	nop
+aaaaa9f4:	00000013          	nop
+aaaaa9f8:	00000013          	nop
+aaaaa9fc:	00000013          	nop
+aaaaaa00:	00000013          	nop
+aaaaaa04:	00000013          	nop
+aaaaaa08:	00000013          	nop
+aaaaaa0c:	00000013          	nop
+aaaaaa10:	00000013          	nop
+aaaaaa14:	00000013          	nop
+aaaaaa18:	00000013          	nop
+aaaaaa1c:	00000013          	nop
+aaaaaa20:	00000013          	nop
+aaaaaa24:	00000013          	nop
+aaaaaa28:	00000013          	nop
+aaaaaa2c:	00000013          	nop
+aaaaaa30:	00000013          	nop
+aaaaaa34:	00000013          	nop
+aaaaaa38:	00000013          	nop
+aaaaaa3c:	00000013          	nop
+aaaaaa40:	00000013          	nop
+aaaaaa44:	00000013          	nop
+aaaaaa48:	00000013          	nop
+aaaaaa4c:	00000013          	nop
+aaaaaa50:	00000013          	nop
+aaaaaa54:	00000013          	nop
+aaaaaa58:	00000013          	nop
+aaaaaa5c:	00000013          	nop
+aaaaaa60:	00000013          	nop
+aaaaaa64:	00000013          	nop
+aaaaaa68:	00000013          	nop
+aaaaaa6c:	00000013          	nop
+aaaaaa70:	00000013          	nop
+aaaaaa74:	00000013          	nop
+aaaaaa78:	00000013          	nop
+aaaaaa7c:	00000013          	nop
+aaaaaa80:	00000013          	nop
+aaaaaa84:	00000013          	nop
+aaaaaa88:	00000013          	nop
+aaaaaa8c:	00000013          	nop
+aaaaaa90:	00000013          	nop
+aaaaaa94:	00000013          	nop
+aaaaaa98:	00000013          	nop
+aaaaaa9c:	00000013          	nop
+aaaaaaa0:	00000013          	nop
+aaaaaaa4:	00000013          	nop
+aaaaaaa8:	00000013          	nop
+aaaaaaac:	00000013          	nop
+aaaaaab0:	00000013          	nop
+aaaaaab4:	00000013          	nop
+aaaaaab8:	00000013          	nop
+aaaaaabc:	00000013          	nop
+aaaaaac0:	00000013          	nop
+aaaaaac4:	00000013          	nop
+aaaaaac8:	00000013          	nop
+aaaaaacc:	00000013          	nop
+aaaaaad0:	00000013          	nop
+aaaaaad4:	00000013          	nop
+aaaaaad8:	00000013          	nop
+aaaaaadc:	00000013          	nop
+aaaaaae0:	00000013          	nop
+aaaaaae4:	00000013          	nop
+aaaaaae8:	00000013          	nop
+aaaaaaec:	00000013          	nop
+aaaaaaf0:	00000013          	nop
+aaaaaaf4:	00000013          	nop
+aaaaaaf8:	00000013          	nop
+aaaaaafc:	00000013          	nop
+aaaaab00:	00000013          	nop
+aaaaab04:	00000013          	nop
+aaaaab08:	00000013          	nop
+aaaaab0c:	00000013          	nop
+aaaaab10:	00000013          	nop
+aaaaab14:	00000013          	nop
+aaaaab18:	00000013          	nop
+aaaaab1c:	00000013          	nop
+aaaaab20:	00000013          	nop
+aaaaab24:	00000013          	nop
+aaaaab28:	00000013          	nop
+aaaaab2c:	00000013          	nop
+aaaaab30:	00000013          	nop
+aaaaab34:	00000013          	nop
+aaaaab38:	00000013          	nop
+aaaaab3c:	00000013          	nop
+aaaaab40:	00000013          	nop
+aaaaab44:	00000013          	nop
+aaaaab48:	00000013          	nop
+aaaaab4c:	00000013          	nop
+aaaaab50:	00000013          	nop
+aaaaab54:	00000013          	nop
+aaaaab58:	00000013          	nop
+aaaaab5c:	00000013          	nop
+aaaaab60:	00000013          	nop
+aaaaab64:	00000013          	nop
+aaaaab68:	00000013          	nop
+aaaaab6c:	00000013          	nop
+aaaaab70:	00000013          	nop
+aaaaab74:	00000013          	nop
+aaaaab78:	00000013          	nop
+aaaaab7c:	00000013          	nop
+aaaaab80:	00000013          	nop
+aaaaab84:	00000013          	nop
+aaaaab88:	00000013          	nop
+aaaaab8c:	00000013          	nop
+aaaaab90:	00000013          	nop
+aaaaab94:	00000013          	nop
+aaaaab98:	00000013          	nop
+aaaaab9c:	00000013          	nop
+aaaaaba0:	00000013          	nop
+aaaaaba4:	00000013          	nop
+aaaaaba8:	00000013          	nop
+aaaaabac:	00000013          	nop
+aaaaabb0:	00000013          	nop
+aaaaabb4:	00000013          	nop
+aaaaabb8:	00000013          	nop
+aaaaabbc:	00000013          	nop
+aaaaabc0:	00000013          	nop
+aaaaabc4:	00000013          	nop
+aaaaabc8:	00000013          	nop
+aaaaabcc:	00000013          	nop
+aaaaabd0:	00000013          	nop
+aaaaabd4:	00000013          	nop
+aaaaabd8:	00000013          	nop
+aaaaabdc:	00000013          	nop
+aaaaabe0:	00000013          	nop
+aaaaabe4:	00000013          	nop
+aaaaabe8:	00000013          	nop
+aaaaabec:	00000013          	nop
+aaaaabf0:	00000013          	nop
+aaaaabf4:	00000013          	nop
+aaaaabf8:	00000013          	nop
+aaaaabfc:	00000013          	nop
+aaaaac00:	00000013          	nop
+aaaaac04:	00000013          	nop
+aaaaac08:	00000013          	nop
+aaaaac0c:	00000013          	nop
+aaaaac10:	00000013          	nop
+aaaaac14:	00000013          	nop
+aaaaac18:	00000013          	nop
+aaaaac1c:	00000013          	nop
+aaaaac20:	00000013          	nop
+aaaaac24:	00000013          	nop
+aaaaac28:	00000013          	nop
+aaaaac2c:	00000013          	nop
+aaaaac30:	00000013          	nop
+aaaaac34:	00000013          	nop
+aaaaac38:	00000013          	nop
+aaaaac3c:	00000013          	nop
+aaaaac40:	00000013          	nop
+aaaaac44:	00000013          	nop
+aaaaac48:	00000013          	nop
+aaaaac4c:	00000013          	nop
+aaaaac50:	00000013          	nop
+aaaaac54:	00000013          	nop
+aaaaac58:	00000013          	nop
+aaaaac5c:	00000013          	nop
+aaaaac60:	00000013          	nop
+aaaaac64:	00000013          	nop
+aaaaac68:	00000013          	nop
+aaaaac6c:	00000013          	nop
+aaaaac70:	00000013          	nop
+aaaaac74:	00000013          	nop
+aaaaac78:	00000013          	nop
+aaaaac7c:	00000013          	nop
+aaaaac80:	00000013          	nop
+aaaaac84:	00000013          	nop
+aaaaac88:	00000013          	nop
+aaaaac8c:	00000013          	nop
+aaaaac90:	00000013          	nop
+aaaaac94:	00000013          	nop
+aaaaac98:	00000013          	nop
+aaaaac9c:	00000013          	nop
+aaaaaca0:	00000013          	nop
+aaaaaca4:	00000013          	nop
+aaaaaca8:	00000013          	nop
+aaaaacac:	00000013          	nop
+aaaaacb0:	00000013          	nop
+aaaaacb4:	00000013          	nop
+aaaaacb8:	00000013          	nop
+aaaaacbc:	00000013          	nop
+aaaaacc0:	00000013          	nop
+aaaaacc4:	00000013          	nop
+aaaaacc8:	00000013          	nop
+aaaaaccc:	00000013          	nop
+aaaaacd0:	00000013          	nop
+aaaaacd4:	00000013          	nop
+aaaaacd8:	00000013          	nop
+aaaaacdc:	00000013          	nop
+aaaaace0:	00000013          	nop
+aaaaace4:	00000013          	nop
+aaaaace8:	00000013          	nop
+aaaaacec:	00000013          	nop
+aaaaacf0:	00000013          	nop
+aaaaacf4:	00000013          	nop
+aaaaacf8:	00000013          	nop
+aaaaacfc:	00000013          	nop
+aaaaad00:	00000013          	nop
+aaaaad04:	00000013          	nop
+aaaaad08:	00000013          	nop
+aaaaad0c:	00000013          	nop
+aaaaad10:	00000013          	nop
+aaaaad14:	00000013          	nop
+aaaaad18:	00000013          	nop
+aaaaad1c:	00000013          	nop
+aaaaad20:	00000013          	nop
+aaaaad24:	00000013          	nop
+aaaaad28:	00000013          	nop
+aaaaad2c:	00000013          	nop
+aaaaad30:	00000013          	nop
+aaaaad34:	00000013          	nop
+aaaaad38:	00000013          	nop
+aaaaad3c:	00000013          	nop
+aaaaad40:	00000013          	nop
+aaaaad44:	00000013          	nop
+aaaaad48:	00000013          	nop
+aaaaad4c:	00000013          	nop
+aaaaad50:	00000013          	nop
+aaaaad54:	00000013          	nop
+aaaaad58:	00000013          	nop
+aaaaad5c:	00000013          	nop
+aaaaad60:	00000013          	nop
+aaaaad64:	00000013          	nop
+aaaaad68:	00000013          	nop
+aaaaad6c:	00000013          	nop
+aaaaad70:	00000013          	nop
+aaaaad74:	00000013          	nop
+aaaaad78:	00000013          	nop
+aaaaad7c:	00000013          	nop
+aaaaad80:	00000013          	nop
+aaaaad84:	00000013          	nop
+aaaaad88:	00000013          	nop
+aaaaad8c:	00000013          	nop
+aaaaad90:	00000013          	nop
+aaaaad94:	00000013          	nop
+aaaaad98:	00000013          	nop
+aaaaad9c:	00000013          	nop
+aaaaada0:	00000013          	nop
+aaaaada4:	00000013          	nop
+aaaaada8:	00000013          	nop
+aaaaadac:	00000013          	nop
+aaaaadb0:	00000013          	nop
+aaaaadb4:	00000013          	nop
+aaaaadb8:	00000013          	nop
+aaaaadbc:	00000013          	nop
+aaaaadc0:	00000013          	nop
+aaaaadc4:	00000013          	nop
+aaaaadc8:	00000013          	nop
+aaaaadcc:	00000013          	nop
+aaaaadd0:	00000013          	nop
+aaaaadd4:	00000013          	nop
+aaaaadd8:	00000013          	nop
+aaaaaddc:	00000013          	nop
+aaaaade0:	00000013          	nop
+aaaaade4:	00000013          	nop
+aaaaade8:	00000013          	nop
+aaaaadec:	00000013          	nop
+aaaaadf0:	00000013          	nop
+aaaaadf4:	00000013          	nop
+aaaaadf8:	00000013          	nop
+aaaaadfc:	00000013          	nop
+aaaaae00:	00000013          	nop
+aaaaae04:	00000013          	nop
+aaaaae08:	00000013          	nop
+aaaaae0c:	00000013          	nop
+aaaaae10:	00000013          	nop
+aaaaae14:	00000013          	nop
+aaaaae18:	00000013          	nop
+aaaaae1c:	00000013          	nop
+aaaaae20:	00000013          	nop
+aaaaae24:	00000013          	nop
+aaaaae28:	00000013          	nop
+aaaaae2c:	00000013          	nop
+aaaaae30:	00000013          	nop
+aaaaae34:	00000013          	nop
+aaaaae38:	00000013          	nop
+aaaaae3c:	00000013          	nop
+aaaaae40:	00000013          	nop
+aaaaae44:	00000013          	nop
+aaaaae48:	00000013          	nop
+aaaaae4c:	00000013          	nop
+aaaaae50:	00000013          	nop
+aaaaae54:	00000013          	nop
+aaaaae58:	00000013          	nop
+aaaaae5c:	00000013          	nop
+aaaaae60:	00000013          	nop
+aaaaae64:	00000013          	nop
+aaaaae68:	00000013          	nop
+aaaaae6c:	00000013          	nop
+aaaaae70:	00000013          	nop
+aaaaae74:	00000013          	nop
+aaaaae78:	00000013          	nop
+aaaaae7c:	00000013          	nop
+aaaaae80:	00000013          	nop
+aaaaae84:	00000013          	nop
+aaaaae88:	00000013          	nop
+aaaaae8c:	00000013          	nop
+aaaaae90:	00000013          	nop
+aaaaae94:	00000013          	nop
+aaaaae98:	00000013          	nop
+aaaaae9c:	00000013          	nop
+aaaaaea0:	00000013          	nop
+aaaaaea4:	00000013          	nop
+aaaaaea8:	00000013          	nop
+aaaaaeac:	00000013          	nop
+aaaaaeb0:	00000013          	nop
+aaaaaeb4:	00000013          	nop
+aaaaaeb8:	00000013          	nop
+aaaaaebc:	00000013          	nop
+aaaaaec0:	00000013          	nop
+aaaaaec4:	00000013          	nop
+aaaaaec8:	00000013          	nop
+aaaaaecc:	00000013          	nop
+aaaaaed0:	00000013          	nop
+aaaaaed4:	00000013          	nop
+aaaaaed8:	00000013          	nop
+aaaaaedc:	00000013          	nop
+aaaaaee0:	00000013          	nop
+aaaaaee4:	00000013          	nop
+aaaaaee8:	00000013          	nop
+aaaaaeec:	00000013          	nop
+aaaaaef0:	00000013          	nop
+aaaaaef4:	00000013          	nop
+aaaaaef8:	00000013          	nop
+aaaaaefc:	00000013          	nop
+aaaaaf00:	00000013          	nop
+aaaaaf04:	00000013          	nop
+aaaaaf08:	00000013          	nop
+aaaaaf0c:	00000013          	nop
+aaaaaf10:	00000013          	nop
+aaaaaf14:	00000013          	nop
+aaaaaf18:	00000013          	nop
+aaaaaf1c:	00000013          	nop
+aaaaaf20:	00000013          	nop
+aaaaaf24:	00000013          	nop
+aaaaaf28:	00000013          	nop
+aaaaaf2c:	00000013          	nop
+aaaaaf30:	00000013          	nop
+aaaaaf34:	00000013          	nop
+aaaaaf38:	00000013          	nop
+aaaaaf3c:	00000013          	nop
+aaaaaf40:	00000013          	nop
+aaaaaf44:	00000013          	nop
+aaaaaf48:	00000013          	nop
+aaaaaf4c:	00000013          	nop
+aaaaaf50:	00000013          	nop
+aaaaaf54:	00000013          	nop
+aaaaaf58:	00000013          	nop
+aaaaaf5c:	00000013          	nop
+aaaaaf60:	00000013          	nop
+aaaaaf64:	00000013          	nop
+aaaaaf68:	00000013          	nop
+aaaaaf6c:	00000013          	nop
+aaaaaf70:	00000013          	nop
+aaaaaf74:	00000013          	nop
+aaaaaf78:	00000013          	nop
+aaaaaf7c:	00000013          	nop
+aaaaaf80:	00000013          	nop
+aaaaaf84:	00000013          	nop
+aaaaaf88:	00000013          	nop
+aaaaaf8c:	00000013          	nop
+aaaaaf90:	00000013          	nop
+aaaaaf94:	00000013          	nop
+aaaaaf98:	00000013          	nop
+aaaaaf9c:	00000013          	nop
+aaaaafa0:	00000013          	nop
+aaaaafa4:	00000013          	nop
+aaaaafa8:	00000013          	nop
+aaaaafac:	00000013          	nop
+aaaaafb0:	00000013          	nop
+aaaaafb4:	00000013          	nop
+aaaaafb8:	00000013          	nop
+aaaaafbc:	00000013          	nop
+aaaaafc0:	00000013          	nop
+aaaaafc4:	00000013          	nop
+aaaaafc8:	00000013          	nop
+aaaaafcc:	00000013          	nop
+aaaaafd0:	00000013          	nop
+aaaaafd4:	00000013          	nop
+aaaaafd8:	00000013          	nop
+aaaaafdc:	00000013          	nop
+aaaaafe0:	00000013          	nop
+aaaaafe4:	00000013          	nop
+aaaaafe8:	00000013          	nop
+aaaaafec:	00000013          	nop
+aaaaaff0:	00000013          	nop
+aaaaaff4:	00000013          	nop
+aaaaaff8:	00000013          	nop
+aaaaaffc:	00000013          	nop
+
+aaaab000 <_sbrk>:
+aaaab000:	00002297          	auipc	t0,0x2
+aaaab004:	0002a283          	lw	t0,0(t0) # aaaad000 <_data_vma_start>
+aaaab008:	00550533          	add	a0,a0,t0
+aaaab00c:	00002317          	auipc	t1,0x2
+aaaab010:	fea32a23          	sw	a0,-12(t1) # aaaad000 <_data_vma_start>
+aaaab014:	00028513          	mv	a0,t0
+aaaab018:	00008067          	ret
+	...
+
+Disassembly of section .text:
+
+aaaac000 <fft>:
+aaaac000:	fd010113          	addi	sp,sp,-48
+aaaac004:	02112623          	sw	ra,44(sp)
+aaaac008:	02812423          	sw	s0,40(sp)
+aaaac00c:	02912223          	sw	s1,36(sp)
+aaaac010:	03212023          	sw	s2,32(sp)
+aaaac014:	01312e23          	sw	s3,28(sp)
+aaaac018:	01412c23          	sw	s4,24(sp)
+aaaac01c:	01512a23          	sw	s5,20(sp)
+aaaac020:	01612823          	sw	s6,16(sp)
+aaaac024:	01712623          	sw	s7,12(sp)
+aaaac028:	01812423          	sw	s8,8(sp)
+aaaac02c:	01912223          	sw	s9,4(sp)
+aaaac030:	03010413          	addi	s0,sp,48
+aaaac034:	00010993          	mv	s3,sp
+aaaac038:	00100793          	li	a5,1
+aaaac03c:	22b7d263          	bge	a5,a1,aaaac260 <fft+0x260>
+aaaac040:	00050a93          	mv	s5,a0
+aaaac044:	00060c13          	mv	s8,a2
+aaaac048:	01f5da13          	srli	s4,a1,0x1f
+aaaac04c:	00ba0a33          	add	s4,s4,a1
+aaaac050:	401a5a13          	srai	s4,s4,0x1
+aaaac054:	002a1913          	slli	s2,s4,0x2
+aaaac058:	00f90793          	addi	a5,s2,15
+aaaac05c:	ff07f793          	andi	a5,a5,-16
+aaaac060:	40f10133          	sub	sp,sp,a5
+aaaac064:	00010b13          	mv	s6,sp
+aaaac068:	40f10133          	sub	sp,sp,a5
+aaaac06c:	00010b93          	mv	s7,sp
+aaaac070:	00050493          	mv	s1,a0
+aaaac074:	00050793          	mv	a5,a0
+aaaac078:	00000693          	li	a3,0
+aaaac07c:	00269713          	slli	a4,a3,0x2
+aaaac080:	00eb0633          	add	a2,s6,a4
+aaaac084:	0007d583          	lhu	a1,0(a5)
+aaaac088:	00b61023          	sh	a1,0(a2)
+aaaac08c:	0027d583          	lhu	a1,2(a5)
+aaaac090:	00b61123          	sh	a1,2(a2)
+aaaac094:	00eb8733          	add	a4,s7,a4
+aaaac098:	0047d583          	lhu	a1,4(a5)
+aaaac09c:	00b71023          	sh	a1,0(a4)
+aaaac0a0:	0067d603          	lhu	a2,6(a5)
+aaaac0a4:	00c71123          	sh	a2,2(a4)
+aaaac0a8:	00168693          	addi	a3,a3,1
+aaaac0ac:	00878793          	addi	a5,a5,8
+aaaac0b0:	fcda16e3          	bne	s4,a3,aaaac07c <fft+0x7c>
+aaaac0b4:	fffc0c93          	addi	s9,s8,-1
+aaaac0b8:	000c8613          	mv	a2,s9
+aaaac0bc:	000a0593          	mv	a1,s4
+aaaac0c0:	000b0513          	mv	a0,s6
+aaaac0c4:	00000097          	auipc	ra,0x0
+aaaac0c8:	f3c080e7          	jalr	-196(ra) # aaaac000 <fft>
+aaaac0cc:	000c8613          	mv	a2,s9
+aaaac0d0:	000a0593          	mv	a1,s4
+aaaac0d4:	000b8513          	mv	a0,s7
+aaaac0d8:	00000097          	auipc	ra,0x0
+aaaac0dc:	f28080e7          	jalr	-216(ra) # aaaac000 <fft>
+aaaac0e0:	ffff85b7          	lui	a1,0xffff8
+aaaac0e4:	4185d633          	sra	a2,a1,s8
+aaaac0e8:	00f61613          	slli	a2,a2,0xf
+aaaac0ec:	01061613          	slli	a2,a2,0x10
+aaaac0f0:	41065613          	srai	a2,a2,0x10
+aaaac0f4:	000b8313          	mv	t1,s7
+aaaac0f8:	000b0893          	mv	a7,s6
+aaaac0fc:	012a8533          	add	a0,s5,s2
+aaaac100:	00000793          	li	a5,0
+aaaac104:	00008837          	lui	a6,0x8
+aaaac108:	fff80813          	addi	a6,a6,-1 # 7fff <_start-0xaaaa2001>
+aaaac10c:	01059693          	slli	a3,a1,0x10
+aaaac110:	0106d693          	srli	a3,a3,0x10
+aaaac114:	00035e03          	lhu	t3,0(t1)
+aaaac118:	01079293          	slli	t0,a5,0x10
+aaaac11c:	0102d293          	srli	t0,t0,0x10
+aaaac120:	00235383          	lhu	t2,2(t1)
+aaaac124:	0008de83          	lhu	t4,0(a7)
+aaaac128:	03c68733          	mul	a4,a3,t3
+aaaac12c:	02728f33          	mul	t5,t0,t2
+aaaac130:	41e70733          	sub	a4,a4,t5
+aaaac134:	01071713          	slli	a4,a4,0x10
+aaaac138:	41075713          	srai	a4,a4,0x10
+aaaac13c:	41f75f93          	srai	t6,a4,0x1f
+aaaac140:	010fffb3          	and	t6,t6,a6
+aaaac144:	00ef8fb3          	add	t6,t6,a4
+aaaac148:	40ffdf93          	srai	t6,t6,0xf
+aaaac14c:	010f9f93          	slli	t6,t6,0x10
+aaaac150:	010fdf93          	srli	t6,t6,0x10
+aaaac154:	01fe8f33          	add	t5,t4,t6
+aaaac158:	010f1f13          	slli	t5,t5,0x10
+aaaac15c:	410f5f13          	srai	t5,t5,0x10
+aaaac160:	41ff5713          	srai	a4,t5,0x1f
+aaaac164:	01077733          	and	a4,a4,a6
+aaaac168:	01e70733          	add	a4,a4,t5
+aaaac16c:	40f75713          	srai	a4,a4,0xf
+aaaac170:	00e49023          	sh	a4,0(s1)
+aaaac174:	0028df03          	lhu	t5,2(a7)
+aaaac178:	027686b3          	mul	a3,a3,t2
+aaaac17c:	025e0e33          	mul	t3,t3,t0
+aaaac180:	01c686b3          	add	a3,a3,t3
+aaaac184:	01069693          	slli	a3,a3,0x10
+aaaac188:	4106d693          	srai	a3,a3,0x10
+aaaac18c:	41f6d713          	srai	a4,a3,0x1f
+aaaac190:	01077733          	and	a4,a4,a6
+aaaac194:	00d70733          	add	a4,a4,a3
+aaaac198:	40f75713          	srai	a4,a4,0xf
+aaaac19c:	01071713          	slli	a4,a4,0x10
+aaaac1a0:	01075713          	srli	a4,a4,0x10
+aaaac1a4:	00ef06b3          	add	a3,t5,a4
+aaaac1a8:	01069693          	slli	a3,a3,0x10
+aaaac1ac:	4106d693          	srai	a3,a3,0x10
+aaaac1b0:	41f6de13          	srai	t3,a3,0x1f
+aaaac1b4:	010e7e33          	and	t3,t3,a6
+aaaac1b8:	00de0e33          	add	t3,t3,a3
+aaaac1bc:	40fe5e13          	srai	t3,t3,0xf
+aaaac1c0:	01c49123          	sh	t3,2(s1)
+aaaac1c4:	009902b3          	add	t0,s2,s1
+aaaac1c8:	41fe8eb3          	sub	t4,t4,t6
+aaaac1cc:	010e9e93          	slli	t4,t4,0x10
+aaaac1d0:	410ede93          	srai	t4,t4,0x10
+aaaac1d4:	41fede13          	srai	t3,t4,0x1f
+aaaac1d8:	010e7e33          	and	t3,t3,a6
+aaaac1dc:	01de0e33          	add	t3,t3,t4
+aaaac1e0:	40fe5e13          	srai	t3,t3,0xf
+aaaac1e4:	01c29023          	sh	t3,0(t0)
+aaaac1e8:	40ef06b3          	sub	a3,t5,a4
+aaaac1ec:	01069693          	slli	a3,a3,0x10
+aaaac1f0:	4106d693          	srai	a3,a3,0x10
+aaaac1f4:	41f6d713          	srai	a4,a3,0x1f
+aaaac1f8:	01077733          	and	a4,a4,a6
+aaaac1fc:	00d70733          	add	a4,a4,a3
+aaaac200:	40f75713          	srai	a4,a4,0xf
+aaaac204:	00e29123          	sh	a4,2(t0)
+aaaac208:	02c787b3          	mul	a5,a5,a2
+aaaac20c:	02c585b3          	mul	a1,a1,a2
+aaaac210:	40f585b3          	sub	a1,a1,a5
+aaaac214:	41f5d713          	srai	a4,a1,0x1f
+aaaac218:	01077733          	and	a4,a4,a6
+aaaac21c:	00b70733          	add	a4,a4,a1
+aaaac220:	40f75713          	srai	a4,a4,0xf
+aaaac224:	01071593          	slli	a1,a4,0x10
+aaaac228:	4105d593          	srai	a1,a1,0x10
+aaaac22c:	02c58733          	mul	a4,a1,a2
+aaaac230:	00f70733          	add	a4,a4,a5
+aaaac234:	41f75793          	srai	a5,a4,0x1f
+aaaac238:	0107f7b3          	and	a5,a5,a6
+aaaac23c:	00e787b3          	add	a5,a5,a4
+aaaac240:	40f7d793          	srai	a5,a5,0xf
+aaaac244:	01079793          	slli	a5,a5,0x10
+aaaac248:	4107d793          	srai	a5,a5,0x10
+aaaac24c:	00430313          	addi	t1,t1,4
+aaaac250:	00488893          	addi	a7,a7,4
+aaaac254:	00448493          	addi	s1,s1,4
+aaaac258:	eaa49ae3          	bne	s1,a0,aaaac10c <fft+0x10c>
+aaaac25c:	00098113          	mv	sp,s3
+aaaac260:	fd040113          	addi	sp,s0,-48
+aaaac264:	02c12083          	lw	ra,44(sp)
+aaaac268:	02812403          	lw	s0,40(sp)
+aaaac26c:	02412483          	lw	s1,36(sp)
+aaaac270:	02012903          	lw	s2,32(sp)
+aaaac274:	01c12983          	lw	s3,28(sp)
+aaaac278:	01812a03          	lw	s4,24(sp)
+aaaac27c:	01412a83          	lw	s5,20(sp)
+aaaac280:	01012b03          	lw	s6,16(sp)
+aaaac284:	00c12b83          	lw	s7,12(sp)
+aaaac288:	00812c03          	lw	s8,8(sp)
+aaaac28c:	00412c83          	lw	s9,4(sp)
+aaaac290:	03010113          	addi	sp,sp,48
+aaaac294:	00008067          	ret
+
+aaaac298 <main>:
+aaaac298:	fe010113          	addi	sp,sp,-32
+aaaac29c:	00112e23          	sw	ra,28(sp)
+aaaac2a0:	00812c23          	sw	s0,24(sp)
+aaaac2a4:	00912a23          	sw	s1,20(sp)
+aaaac2a8:	ffffc2b7          	lui	t0,0xffffc
+aaaac2ac:	00510133          	add	sp,sp,t0
+aaaac2b0:	00001797          	auipc	a5,0x1
+aaaac2b4:	d5478793          	addi	a5,a5,-684 # aaaad004 <_data_vma_start+0x4>
+aaaac2b8:	00004737          	lui	a4,0x4
+aaaac2bc:	81070713          	addi	a4,a4,-2032 # 3810 <_start-0xaaaa67f0>
+aaaac2c0:	00e10733          	add	a4,sp,a4
+aaaac2c4:	00001697          	auipc	a3,0x1
+aaaac2c8:	54068693          	addi	a3,a3,1344 # aaaad804 <_data_vma_start+0x804>
+aaaac2cc:	0007a803          	lw	a6,0(a5)
+aaaac2d0:	0047a503          	lw	a0,4(a5)
+aaaac2d4:	0087a583          	lw	a1,8(a5)
+aaaac2d8:	00c7a603          	lw	a2,12(a5)
+aaaac2dc:	01072023          	sw	a6,0(a4)
+aaaac2e0:	00a72223          	sw	a0,4(a4)
+aaaac2e4:	00b72423          	sw	a1,8(a4)
+aaaac2e8:	00c72623          	sw	a2,12(a4)
+aaaac2ec:	01078793          	addi	a5,a5,16
+aaaac2f0:	01070713          	addi	a4,a4,16
+aaaac2f4:	fcd79ce3          	bne	a5,a3,aaaac2cc <main+0x34>
+aaaac2f8:	00001717          	auipc	a4,0x1
+aaaac2fc:	50c70713          	addi	a4,a4,1292 # aaaad804 <_data_vma_start+0x804>
+aaaac300:	000037b7          	lui	a5,0x3
+aaaac304:	81078793          	addi	a5,a5,-2032 # 2810 <_start-0xaaaa77f0>
+aaaac308:	00f107b3          	add	a5,sp,a5
+aaaac30c:	00002697          	auipc	a3,0x2
+aaaac310:	cf868693          	addi	a3,a3,-776 # aaaae004 <_data_vma_start+0x1004>
+aaaac314:	00072803          	lw	a6,0(a4)
+aaaac318:	00472503          	lw	a0,4(a4)
+aaaac31c:	00872583          	lw	a1,8(a4)
+aaaac320:	00c72603          	lw	a2,12(a4)
+aaaac324:	0107a023          	sw	a6,0(a5)
+aaaac328:	00a7a223          	sw	a0,4(a5)
+aaaac32c:	00b7a423          	sw	a1,8(a5)
+aaaac330:	00c7a623          	sw	a2,12(a5)
+aaaac334:	01070713          	addi	a4,a4,16
+aaaac338:	01078793          	addi	a5,a5,16
+aaaac33c:	fcd71ce3          	bne	a4,a3,aaaac314 <main+0x7c>
+aaaac340:	00002717          	auipc	a4,0x2
+aaaac344:	cc470713          	addi	a4,a4,-828 # aaaae004 <_data_vma_start+0x1004>
+aaaac348:	000027b7          	lui	a5,0x2
+aaaac34c:	81078793          	addi	a5,a5,-2032 # 1810 <_start-0xaaaa87f0>
+aaaac350:	00f107b3          	add	a5,sp,a5
+aaaac354:	00002697          	auipc	a3,0x2
+aaaac358:	4b068693          	addi	a3,a3,1200 # aaaae804 <_data_vma_start+0x1804>
+aaaac35c:	00072803          	lw	a6,0(a4)
+aaaac360:	00472503          	lw	a0,4(a4)
+aaaac364:	00872583          	lw	a1,8(a4)
+aaaac368:	00c72603          	lw	a2,12(a4)
+aaaac36c:	0107a023          	sw	a6,0(a5)
+aaaac370:	00a7a223          	sw	a0,4(a5)
+aaaac374:	00b7a423          	sw	a1,8(a5)
+aaaac378:	00c7a623          	sw	a2,12(a5)
+aaaac37c:	01070713          	addi	a4,a4,16
+aaaac380:	01078793          	addi	a5,a5,16
+aaaac384:	fcd71ce3          	bne	a4,a3,aaaac35c <main+0xc4>
+aaaac388:	00002717          	auipc	a4,0x2
+aaaac38c:	47c70713          	addi	a4,a4,1148 # aaaae804 <_data_vma_start+0x1804>
+aaaac390:	000017b7          	lui	a5,0x1
+aaaac394:	81078793          	addi	a5,a5,-2032 # 810 <_start-0xaaaa97f0>
+aaaac398:	00f107b3          	add	a5,sp,a5
+aaaac39c:	00003697          	auipc	a3,0x3
+aaaac3a0:	c6868693          	addi	a3,a3,-920 # aaaaf004 <_data_vma_end>
+aaaac3a4:	00072803          	lw	a6,0(a4)
+aaaac3a8:	00472503          	lw	a0,4(a4)
+aaaac3ac:	00872583          	lw	a1,8(a4)
+aaaac3b0:	00c72603          	lw	a2,12(a4)
+aaaac3b4:	0107a023          	sw	a6,0(a5)
+aaaac3b8:	00a7a223          	sw	a0,4(a5)
+aaaac3bc:	00b7a423          	sw	a1,8(a5)
+aaaac3c0:	00c7a623          	sw	a2,12(a5)
+aaaac3c4:	01070713          	addi	a4,a4,16
+aaaac3c8:	01078793          	addi	a5,a5,16
+aaaac3cc:	fcd71ce3          	bne	a4,a3,aaaac3a4 <main+0x10c>
+aaaac3d0:	00102013          	slti	zero,zero,1
+aaaac3d4:	00000593          	li	a1,0
+aaaac3d8:	00000613          	li	a2,0
+aaaac3dc:	00000693          	li	a3,0
+aaaac3e0:	000047b7          	lui	a5,0x4
+aaaac3e4:	81078793          	addi	a5,a5,-2032 # 3810 <_start-0xaaaa67f0>
+aaaac3e8:	00f108b3          	add	a7,sp,a5
+aaaac3ec:	01010813          	addi	a6,sp,16
+aaaac3f0:	000037b7          	lui	a5,0x3
+aaaac3f4:	01078793          	addi	a5,a5,16 # 3010 <_start-0xaaaa6ff0>
+aaaac3f8:	00f10333          	add	t1,sp,a5
+aaaac3fc:	20000e13          	li	t3,512
+aaaac400:	41f5d713          	srai	a4,a1,0x1f
+aaaac404:	01775713          	srli	a4,a4,0x17
+aaaac408:	00e587b3          	add	a5,a1,a4
+aaaac40c:	1ff7f793          	andi	a5,a5,511
+aaaac410:	40e787b3          	sub	a5,a5,a4
+aaaac414:	00179793          	slli	a5,a5,0x1
+aaaac418:	011787b3          	add	a5,a5,a7
+aaaac41c:	0007d503          	lhu	a0,0(a5)
+aaaac420:	00f51513          	slli	a0,a0,0xf
+aaaac424:	41f65713          	srai	a4,a2,0x1f
+aaaac428:	01775713          	srli	a4,a4,0x17
+aaaac42c:	00e607b3          	add	a5,a2,a4
+aaaac430:	1ff7f793          	andi	a5,a5,511
+aaaac434:	40e787b3          	sub	a5,a5,a4
+aaaac438:	00179793          	slli	a5,a5,0x1
+aaaac43c:	011787b3          	add	a5,a5,a7
+aaaac440:	0007d783          	lhu	a5,0(a5)
+aaaac444:	00f79793          	slli	a5,a5,0xf
+aaaac448:	fef81823          	sh	a5,-16(a6)
+aaaac44c:	fea81923          	sh	a0,-14(a6)
+aaaac450:	00269793          	slli	a5,a3,0x2
+aaaac454:	00f307b3          	add	a5,t1,a5
+aaaac458:	ff082703          	lw	a4,-16(a6)
+aaaac45c:	00e7a023          	sw	a4,0(a5)
+aaaac460:	00168693          	addi	a3,a3,1
+aaaac464:	01b60613          	addi	a2,a2,27
+aaaac468:	01758593          	addi	a1,a1,23 # ffff8017 <_stack_top+0xfff8017>
+aaaac46c:	f9c69ae3          	bne	a3,t3,aaaac400 <main+0x168>
+aaaac470:	00000593          	li	a1,0
+aaaac474:	00000613          	li	a2,0
+aaaac478:	00000693          	li	a3,0
+aaaac47c:	000037b7          	lui	a5,0x3
+aaaac480:	01078793          	addi	a5,a5,16 # 3010 <_start-0xaaaa6ff0>
+aaaac484:	00f108b3          	add	a7,sp,a5
+aaaac488:	01010813          	addi	a6,sp,16
+aaaac48c:	000027b7          	lui	a5,0x2
+aaaac490:	01078793          	addi	a5,a5,16 # 2010 <_start-0xaaaa7ff0>
+aaaac494:	00f10333          	add	t1,sp,a5
+aaaac498:	20000e13          	li	t3,512
+aaaac49c:	41f5d713          	srai	a4,a1,0x1f
+aaaac4a0:	01775713          	srli	a4,a4,0x17
+aaaac4a4:	00e587b3          	add	a5,a1,a4
+aaaac4a8:	1ff7f793          	andi	a5,a5,511
+aaaac4ac:	40e787b3          	sub	a5,a5,a4
+aaaac4b0:	00179793          	slli	a5,a5,0x1
+aaaac4b4:	00f887b3          	add	a5,a7,a5
+aaaac4b8:	8007d503          	lhu	a0,-2048(a5)
+aaaac4bc:	00f51513          	slli	a0,a0,0xf
+aaaac4c0:	41f65713          	srai	a4,a2,0x1f
+aaaac4c4:	01775713          	srli	a4,a4,0x17
+aaaac4c8:	00e607b3          	add	a5,a2,a4
+aaaac4cc:	1ff7f793          	andi	a5,a5,511
+aaaac4d0:	40e787b3          	sub	a5,a5,a4
+aaaac4d4:	00179793          	slli	a5,a5,0x1
+aaaac4d8:	00f887b3          	add	a5,a7,a5
+aaaac4dc:	8007d783          	lhu	a5,-2048(a5)
+aaaac4e0:	00f79793          	slli	a5,a5,0xf
+aaaac4e4:	fef81a23          	sh	a5,-12(a6)
+aaaac4e8:	fea81b23          	sh	a0,-10(a6)
+aaaac4ec:	00269793          	slli	a5,a3,0x2
+aaaac4f0:	00f307b3          	add	a5,t1,a5
+aaaac4f4:	ff482703          	lw	a4,-12(a6)
+aaaac4f8:	00e7a023          	sw	a4,0(a5)
+aaaac4fc:	00168693          	addi	a3,a3,1
+aaaac500:	01b60613          	addi	a2,a2,27
+aaaac504:	01758593          	addi	a1,a1,23
+aaaac508:	f9c69ae3          	bne	a3,t3,aaaac49c <main+0x204>
+aaaac50c:	00000593          	li	a1,0
+aaaac510:	00000613          	li	a2,0
+aaaac514:	00000693          	li	a3,0
+aaaac518:	000027b7          	lui	a5,0x2
+aaaac51c:	01078793          	addi	a5,a5,16 # 2010 <_start-0xaaaa7ff0>
+aaaac520:	00f108b3          	add	a7,sp,a5
+aaaac524:	01010813          	addi	a6,sp,16
+aaaac528:	000017b7          	lui	a5,0x1
+aaaac52c:	01078793          	addi	a5,a5,16 # 1010 <_start-0xaaaa8ff0>
+aaaac530:	00f10333          	add	t1,sp,a5
+aaaac534:	20000e13          	li	t3,512
+aaaac538:	41f5d713          	srai	a4,a1,0x1f
+aaaac53c:	01775713          	srli	a4,a4,0x17
+aaaac540:	00e587b3          	add	a5,a1,a4
+aaaac544:	1ff7f793          	andi	a5,a5,511
+aaaac548:	40e787b3          	sub	a5,a5,a4
+aaaac54c:	00179793          	slli	a5,a5,0x1
+aaaac550:	00f887b3          	add	a5,a7,a5
+aaaac554:	8007d503          	lhu	a0,-2048(a5)
+aaaac558:	00f51513          	slli	a0,a0,0xf
+aaaac55c:	41f65713          	srai	a4,a2,0x1f
+aaaac560:	01775713          	srli	a4,a4,0x17
+aaaac564:	00e607b3          	add	a5,a2,a4
+aaaac568:	1ff7f793          	andi	a5,a5,511
+aaaac56c:	40e787b3          	sub	a5,a5,a4
+aaaac570:	00179793          	slli	a5,a5,0x1
+aaaac574:	00f887b3          	add	a5,a7,a5
+aaaac578:	8007d783          	lhu	a5,-2048(a5)
+aaaac57c:	00f79793          	slli	a5,a5,0xf
+aaaac580:	fef81c23          	sh	a5,-8(a6)
+aaaac584:	fea81d23          	sh	a0,-6(a6)
+aaaac588:	00269793          	slli	a5,a3,0x2
+aaaac58c:	00f307b3          	add	a5,t1,a5
+aaaac590:	ff882703          	lw	a4,-8(a6)
+aaaac594:	00e7a023          	sw	a4,0(a5)
+aaaac598:	00168693          	addi	a3,a3,1
+aaaac59c:	01b60613          	addi	a2,a2,27
+aaaac5a0:	01758593          	addi	a1,a1,23
+aaaac5a4:	f9c69ae3          	bne	a3,t3,aaaac538 <main+0x2a0>
+aaaac5a8:	00000513          	li	a0,0
+aaaac5ac:	00000593          	li	a1,0
+aaaac5b0:	00000613          	li	a2,0
+aaaac5b4:	000017b7          	lui	a5,0x1
+aaaac5b8:	01078793          	addi	a5,a5,16 # 1010 <_start-0xaaaa8ff0>
+aaaac5bc:	00f108b3          	add	a7,sp,a5
+aaaac5c0:	01010693          	addi	a3,sp,16
+aaaac5c4:	20000313          	li	t1,512
+aaaac5c8:	41f55713          	srai	a4,a0,0x1f
+aaaac5cc:	01775713          	srli	a4,a4,0x17
+aaaac5d0:	00e507b3          	add	a5,a0,a4
+aaaac5d4:	1ff7f793          	andi	a5,a5,511
+aaaac5d8:	40e787b3          	sub	a5,a5,a4
+aaaac5dc:	00179793          	slli	a5,a5,0x1
+aaaac5e0:	00f887b3          	add	a5,a7,a5
+aaaac5e4:	8007d803          	lhu	a6,-2048(a5)
+aaaac5e8:	00f81813          	slli	a6,a6,0xf
+aaaac5ec:	41f5d713          	srai	a4,a1,0x1f
+aaaac5f0:	01775713          	srli	a4,a4,0x17
+aaaac5f4:	00e587b3          	add	a5,a1,a4
+aaaac5f8:	1ff7f793          	andi	a5,a5,511
+aaaac5fc:	40e787b3          	sub	a5,a5,a4
+aaaac600:	00179793          	slli	a5,a5,0x1
+aaaac604:	00f887b3          	add	a5,a7,a5
+aaaac608:	8007d783          	lhu	a5,-2048(a5)
+aaaac60c:	00f79793          	slli	a5,a5,0xf
+aaaac610:	fef69e23          	sh	a5,-4(a3)
+aaaac614:	ff069f23          	sh	a6,-2(a3)
+aaaac618:	00261793          	slli	a5,a2,0x2
+aaaac61c:	00f687b3          	add	a5,a3,a5
+aaaac620:	ffc6a703          	lw	a4,-4(a3)
+aaaac624:	00e7a023          	sw	a4,0(a5)
+aaaac628:	00160613          	addi	a2,a2,1
+aaaac62c:	01b58593          	addi	a1,a1,27
+aaaac630:	01750513          	addi	a0,a0,23
+aaaac634:	f8661ae3          	bne	a2,t1,aaaac5c8 <main+0x330>
+aaaac638:	000037b7          	lui	a5,0x3
+aaaac63c:	01078793          	addi	a5,a5,16 # 3010 <_start-0xaaaa6ff0>
+aaaac640:	00f104b3          	add	s1,sp,a5
+aaaac644:	00900613          	li	a2,9
+aaaac648:	20000593          	li	a1,512
+aaaac64c:	00048513          	mv	a0,s1
+aaaac650:	00000097          	auipc	ra,0x0
+aaaac654:	9b0080e7          	jalr	-1616(ra) # aaaac000 <fft>
+aaaac658:	000027b7          	lui	a5,0x2
+aaaac65c:	01078793          	addi	a5,a5,16 # 2010 <_start-0xaaaa7ff0>
+aaaac660:	00f10433          	add	s0,sp,a5
+aaaac664:	00900613          	li	a2,9
+aaaac668:	20000593          	li	a1,512
+aaaac66c:	00040513          	mv	a0,s0
+aaaac670:	00000097          	auipc	ra,0x0
+aaaac674:	990080e7          	jalr	-1648(ra) # aaaac000 <fft>
+aaaac678:	00900613          	li	a2,9
+aaaac67c:	20000593          	li	a1,512
+aaaac680:	00048513          	mv	a0,s1
+aaaac684:	00000097          	auipc	ra,0x0
+aaaac688:	97c080e7          	jalr	-1668(ra) # aaaac000 <fft>
+aaaac68c:	00302013          	slti	zero,zero,3
+aaaac690:	00900613          	li	a2,9
+aaaac694:	20000593          	li	a1,512
+aaaac698:	00040513          	mv	a0,s0
+aaaac69c:	00000097          	auipc	ra,0x0
+aaaac6a0:	964080e7          	jalr	-1692(ra) # aaaac000 <fft>
+aaaac6a4:	00402013          	slti	zero,zero,4
+aaaac6a8:	00202013          	slti	zero,zero,2
+aaaac6ac:	00000513          	li	a0,0
+aaaac6b0:	000042b7          	lui	t0,0x4
+aaaac6b4:	00510133          	add	sp,sp,t0
+aaaac6b8:	01c12083          	lw	ra,28(sp)
+aaaac6bc:	01812403          	lw	s0,24(sp)
+aaaac6c0:	01412483          	lw	s1,20(sp)
+aaaac6c4:	02010113          	addi	sp,sp,32
+aaaac6c8:	00008067          	ret
+
+aaaac6cc <_text_vma_end>:
+	...
